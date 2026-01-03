@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="meta.title"> Express Center - ศูนย์รวมบริการขนส่งครบวงจร</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="assets/logo.png" alt="Express Center Logistics"></a>
+            </div>
+            <div class="hamburger-menu" id="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" data-i18n="nav.home">หน้าแรก</a></li>
+                <li><a href="#services" data-i18n="nav.services">บริการของเรา</a></li>
+                <li><a href="#features" data-i18n="nav.features">จุดเด่น</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">ติดต่อเรา</a></li>
+                <li><a href="about.html" data-i18n="nav.about">เกี่ยวกับเรา</a></li>
+                <li class="nav-item dropdown">
+                    <button class="dropdown-toggle" id="termsToggle" aria-haspopup="true" aria-expanded="false"
+                        aria-controls="termsMenu">
+                        <span data-i18n="nav.terms"><a href="content.html"></a>เงื่อนไขและข้อกำหนด</span> <i
+                            class="fas fa-caret-down" aria-hidden="true"></i>
+                    </button>
+                    <ul class="dropdown-menu" id="termsMenu" role="menu" aria-labelledby="termsToggle">
+                        <li role="none"><a role="menuitem" href="terms.html"
+                                data-i18n="dropdown.terms">ข้อกำหนดและเงื่อนไขการใช้งาน (Terms & Conditions)</a></li>
+                        <li role="none"><a role="menuitem" href="privacy-policy.html"
+                                data-i18n="dropdown.privacy">นโยบายความเป็นส่วนตัว</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="lang-th">
+                <span id="btn-th" class="lang-switch active " onclick="setLanguage('th')">ไทย</span>
+                <span> | </span>
+                <span id="btn-en" class="lang-switch" onclick="setLanguage('en')">Eng</span>
+            </div>
+
+            <div class="social">
+                <a href="https://www.facebook.com/ExpressCenterCM/" class="fab fa-facebook"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="https://lin.ee/70kbldQ" class="fab fa-line"></a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="maincontent" class="hero">
+        <div class="container hero-content">
+            <h1 data-i18n="hero.title">ศูนย์รวมบริการขนส่งครบวงจร พร้อมดูแลพัสดุของคุณทุกขั้นตอน</h1>
+            <p data-i18n="hero.desc">ศูนย์รวมบริการขนส่งครบวงจร พร้อมดูแลและประสานงานทุกขั้นตอน</p>
+
+            <div class="tracking-widget-wrapper">
+                <div class="main-tracking-container">
+                    <div class="section-title-1">ติดตามพัสดุรวมทุกขนส่ง</div>
+
+                    <input type="text" id="trackingInput"
+                        placeholder="กรุณากรอกเลขพัสดุของคุณที่นี่... (เช่น TH123456789)"
+                        data-i18n-placeholder="tracking.placeholder">
+
+                    <div class="courier-selector-title" data-i18n="tracking.courierTitle">เลือกผู้ให้บริการขนส่ง
+                        (จำเป็น):</div>
+
+                    <div class="courier-grid">
+                        <div class="courier-item" data-courier="flash"
+                            data-url="https://www.flashexpress.com/fle/tracking?se=">
+                            <img src="./assets/Flash_Express_Logo.svg-removebg-preview.png" alt="Flash Express">
+                        </div>
+                        <div class="courier-item" data-courier="thp"
+                            data-url="https://track.thailandpost.co.th/?trackNumber=">
+                            <img src="./assets/pp.png" alt="Thailand Post">
+                        </div>
+                        <div class="courier-item" data-courier="jnt"
+                            data-url="https://www.jtexpress.co.th/service/track?waybillNo=">
+                            <img src="./assets/jt.png" alt="J&T Express">
+                        </div>
+                        <div class="courier-item" data-courier="dhl"
+                            data-url="https://www.dhl.com/th-th/home/tracking.html?tracking-id=">
+                            <img src="./assets/dhl.png" alt="DHL">
+                        </div>
+                        <div class="courier-item" data-courier="kerry"
+                            data-url="https://th.kerryexpress.com/th/track/?track=">
+                            <img src="./assets/KEX-logo-RGB_Orange_BG.webp" alt="Kerry Express">
+                        </div>
+                        <!-- <div class="courier-item" data-courier="spx" data-url="https://spx.co.th/th">
+                            <img src="assets/spx-express-logo.png" alt="SPX">
+                        </div> -->
+                        <div class="courier-item" data-courier="lex"
+                            data-url="https://lex.th/tracking?spm=a2a5o.track-trace-search.0.0.186251e2pzgOJg">
+                            <img src="./assets/lazada-logo.jpg" alt="Lazada Express">
+                        </div>
+                        <div class="courier-item" data-courier="Best"
+                            data-url="https://www.best-inc.co.th/track?bills=">
+                            <img src="./assets/best-logo.png" alt="Best Express">
+                        </div>
+
+                    </div>
+
+                    <button id="mainTrackBtn" class="btn btn-primary" disabled>
+                        <i class="fas fa-search" aria-hidden="true"></i> <span
+                            data-i18n="tracking.button">ค้นหาพัสดุ</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="slider" aria-label="Hero Slider">
+        <button class="prev" style="color: var(--secondary-color);">&#10094;</button>
+        <div class="slide slide-1">
+            <img src="assets/pro.png" alt="Delivery">
+        </div>
+        <div class="slide slide-2">
+            <img src="assets/drop-off.png" alt="drop-off">
+        </div>
+        <div class="slide slide-3">
+            <img src="assets/hero.png" alt="Transport">
+        </div>
+        <div class="slide slide-4">
+            <img src="assets/fiuse.png" alt="Express">
+        </div>
+        <button class="next" style="color: var(--secondary-color);">&#10095;</button>
+        <div class="dots-container"></div>
+    </section>
+
+
+    <section id="services" class="section-padding container">
+        <div class="section-title">
+            <h2 data-i18n="services.title">บริการของเรา</h2>
+            <p data-i18n="services.desc">ตอบโจทย์ทุกความต้องการด้านการขนส่ง</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-truck" aria-hidden="true"></i>
+                </div>
+                <h3 data-i18n="service.road.title">ขนส่งทางบกทั่วไทย</h3>
+                <p data-i18n="service.road.desc">บริการ ส่งสินค้าทั่วทุกภาคของประเทศไทย รวดเร็ว ตรงเวลา</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-plane-departure" aria-hidden="true"></i>
+                </div>
+                <h3 data-i18n="service.air.title">ขนส่งระหว่างในประเทศ Cargo</h3>
+                <p data-i18n="service.air.desc">บริการนำเข้า-ส่งออกทางอากาศ พร้อมบริการด้านพิธีการศุลกากร</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-warehouse" aria-hidden="true"></i>
+                </div>
+                <h3 data-i18n="service.warehouse.title">คลังสินค้าและกระจายสินค้า</h3>
+                <p data-i18n="service.warehouse.desc">บริการจัดเก็บ แพ็ค และกระจายสินค้า
+                    ด้วยระบบจัดการคลังสินค้าที่ทันสมัย</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section-padding features">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-i18n="features.title">ทำไมต้องเลือกเรา</h2>
+            </div>
+            <div class="services-grid">
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-stopwatch" aria-hidden="true"></i></div>
+                    <div>
+                        <h3 data-i18n="feature.speed.title">รวดเร็ว ตรงเวลา</h3>
+                        <p data-i18n="feature.speed.desc">เราให้ความสำคัญกับเวลาของคุณ
+                            ด้วยการบริหารจัดการเส้นทางที่มีประสิทธิภาพ</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+                    <div>
+                        <h3 data-i18n="feature.safe.title">ปลอดภัยสูงสุด</h3>
+                        <p data-i18n="feature.safe.desc">มั่นใจได้ด้วยระบบติดตาม GPS และประกันสินค้าเสียหาย</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-headset" aria-hidden="true"></i></div>
+                    <div>
+                        <h3 data-i18n="feature.support.title">บริการลูกค้า ในทุกขั้นตอน</h3>
+                        <p data-i18n="feature.support.desc">ทีมงานซัพพอร์ตพร้อมช่วยเหลือและตอบคำถามของคุณตลอดเวลา</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding container" style="text-align: center;">
+        <div class="section-title">
+            <h2 data-i18n="cta.title">พร้อมเริ่มส่งของกับเราหรือยัง?</h2>
+            <p data-i18n="cta.desc">ขอใบเสนอราคา หรือปรึกษาผู้เชี่ยวชาญของเราได้ฟรี</p>
+        </div>
+        <button class="btn btn-primary" style="font-size: 1.2rem;"><span
+                data-i18n="cta.button">แอดไลน์สอบถามราคาแต่ละขนส่ง</span>
+            </span>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+
+    </section>
+    <section class="location-section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>ติดต่อเรา & แผนที่สาขา</h2>
+                <div style="width: 60px; height: 4px; background: #ff9f1c; margin: 10px auto;"></div>
+                <p style="margin-top: 15px; color: var(--secondary-color);">พร้อมให้บริการคุณ</p>
+            </div>
+
+            <div class="location-container">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="icon-box">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>ที่อยู่ร้านค้า</h3>
+                            <p>159/3 ถนนช้างเผือก ตำบลศรีภูมิ อำเภอเมือง<br>จังหวัดเชียงใหม่ 50200</p>
+                            <a href="https://maps.app.goo.gl/BWD4PpFzVNZP4gYw8" target="_blank"
+                                rel="noopener noreferrer" class="direction-link">
+                                <i class="fas fa-location-arrow" aria-hidden="true"></i>
+                                <span data-i18n="direction.link">ขอเส้นทาง</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="icon-box">
+                            <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>เบอร์โทรศัพท์</h3>
+                            <p>098-879-5269 (ฝ่ายบริการลูกค้า)</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="icon-box">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>อีเมล & ไลน์</h3>
+                            <p>expresscentercnx65@gmail.com<br>Line ID: 0898795269 </p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="icon-box">
+                            <i class="fas fa-clock" aria-hidden="true"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>เวลาทำการ</h3>
+                            <p>จันทร์ - เสาร์: 08:00 - 00:00 น.<br> อาทิตย์ : 08:00 - 18:00 น. (ไม่มีวันหยุด)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-frame">
+                    <!-- Embedded map focused on the store address -->
+                    <iframe
+                        src="https://www.google.com/maps?q=159/3%20ถนนช้างเผือก%20ตำบลศรีภูมิ%20อำเภอเมือง%20จังหวัดเชียงใหม่%2050200&output=embed"
+                        width="100%" height="100%" style="border:0;" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" aria-label="Map to Express Center Logistics">
+                    </iframe>
+
+                    <!-- Floating button to open the Maps short link (directions) -->
+                    <a class="map-open-btn" href="https://maps.app.goo.gl/BWD4PpFzVNZP4gYw8" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fas fa-location-arrow" aria-hidden="true"></i>
+                        <span data-i18n="direction.link">ขอเส้นทาง</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="color: white; margin-bottom: 20px;">
+                        <i class="fas fa-truck-fast" style="color: var(--secondary-color);" aria-hidden="true"></i>
+                        Express Center
+
+                    </div>
+                    <p>มุ่งมั่นให้บริการขนส่งที่ดีที่สุด เพื่อขับเคลื่อนธุรกิจของคุณไปข้างหน้า</p>
+                </div>
+                <div class="footer-col">
+                    <h4>ลิงก์ด่วน</h4>
+                    <ul>
+                        <li><a href="#">หน้าแรก</a></li>
+                        <li><a href="#">เกี่ยวกับเรา</a></li>
+                        <li><a href="#">บริการ</a></li>
+                        <li><a href="#">ข่าวสาร</a></li>
+                        <li><a href="content.html">สินค้าต้องห้าม || เงื่อนไขขนส่ง </a></li>
+                        <li><a href="privacy-policy.html">นโยบายความเป็นส่วนตัว (Privacy Policy)</a></li>
+                        <li><a href="terms.html">ข้อกำหนดและเงื่อนไขการใช้งาน (Terms & Conditions)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>ติดต่อเรา</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 159/3 ถนนช้างเผือก ตำบลศรีภูมิ
+                            อำเภอเมือง
+                            จังหวัดเชียงใหม่ 50200</li>
+                        <li><i class="fas fa-phone" aria-hidden="true"></i> 0988795261 </li>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i> expresscentercnx65@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer disclaimer -->
+            <div class="footer-disclaimer">
+                <p data-i18n="disclaimer.logo">“โลโก้เป็นเครื่องหมายการค้าของแต่ละบริษัท ใช้เพื่อการอ้างอิงเท่านั้น”</p>
+                <p data-i18n="disclaimer.owner">เว็บไซต์นี้เป็นศูนย์รวมบริการขนส่ง
+                    ไม่ได้เป็นเจ้าของหรือดำเนินงานโดยบริษัทขนส่งใดโดยตรง</p>
+                <p data-i18n="disclaimer.purpose">เว็บไซต์นี้ ทำมาเพื่อ อำนวยความสะดวกให้ลูกค้าเช็คเลขพัสดุ เท่านั้น.
+                </p>
+                <p>รายชื่อผู้ให้บริการขนส่งแสดงเพื่อการอ้างอิง ลูกค้าจะถูกนำไปยังเว็บไซต์ของแต่ละบริษัท</p>
+            </div>
+
+            <div class="®️copyrightBy-Div_Nat">
+                <p>&copy; 2023 Express Center. All rights reserved.</p>
+                <div class="visitor-counter" style="margin-top:8px; font-size:0.95rem; color: rgba(255,255,255,0.9);">
+                    <span data-i18n="visitors.label">ผู้เข้าชมเว็บไซต์:</span>
+                    <span id="visitorCount">—</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+
+
+</html>

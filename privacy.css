@@ -1,0 +1,161 @@
+@import url('style.css');
+
+/* --- Privacy Policy Specific Styles --- */
+
+/* Wrapper for the main content to separate it from background */
+.content-wrapper {
+    background: var(--primary-color);
+    padding: 60px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    /* Premium shadow */
+    margin-bottom: 60px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    /* Subtle border */
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Header Override - Ensure it behaves correctly if class="privacy" is present */
+header.privacy {
+    /* Resetting any potential user-added flex center styles that might break nav */
+    display: block;
+    height: auto;
+    width: 100%;
+    /* Inherits fixed position from style.css */
+}
+
+/* Adjustment for fixed header spacing */
+.section-title {
+    margin-top: 120px;
+    /* Accounts for navbar height */
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.section-title p {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+/* Privacy Content Styling */
+.privacy-content {
+    font-family: 'Sarabun', sans-serif;
+    color: var(--text-dark);
+}
+
+.privacy-content h3 {
+    color: var(--primary-color);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    padding-left: 15px;
+}
+
+/* Decorative left border for headings */
+.privacy-content h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    bottom: 5px;
+    width: 4px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.privacy-content p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #4a4a4a;
+    font-size: 1rem;
+}
+
+.privacy-content ul {
+    list-style-type: none;
+    margin-left: 0;
+    margin-bottom: 25px;
+    background: #f8f9fa;
+    padding: 20px 25px;
+    border-radius: 8px;
+    border-left: 4px solid #e9ecef;
+}
+
+.privacy-content ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Custom bullet points */
+.privacy-content ul li::before {
+    content: "\f00c";
+    /* FontAwesome check */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--secondary-color);
+    font-size: 0.9em;
+}
+
+.privacy-content strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.privacy-content a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-bottom: 1px dotted transparent;
+}
+
+.privacy-content a:hover {
+    color: #e68a00;
+    border-bottom-color: #e68a00;
+}
+
+/* Last update date styling */
+.privacy-content p em {
+    display: block;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #888;
+    font-style: normal;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+/* Responsive Handling */
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding: 30px 20px;
+    }
+
+    .section-title {
+        margin-top: 100px;
+    }
+
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+
+    .privacy-content h3 {
+        font-size: 1.3rem;
+    }
+}

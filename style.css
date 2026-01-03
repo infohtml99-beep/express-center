@@ -1,0 +1,1614 @@
+  /* --- CSS Reset & Variables --- */
+  :root {
+      --primary-color: #0a2342;
+      /* น้ำเงินเข้ม */
+      --secondary-color: #ff9f1c;
+      /* ส้ม */
+      --text-dark: #333333;
+      --text-light: #f4f4f4;
+      --bg-light: #f9fbfd;
+  }
+
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+
+  body {
+      font-family: 'Sarabun', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background: var(--bg-light);
+  }
+
+  .logo img {
+      /* Make logo fit the navbar: responsive, preserve aspect ratio */
+      max-height: 38px;
+      height: auto;
+      width: auto;
+      max-width: 220px;
+      margin-right: 12px;
+      object-fit: contain;
+      display: inline-block;
+      vertical-align: middle;
+  }
+
+  /* smaller logo on narrow screens */
+  @media (max-width: 600px) {
+      .logo img {
+          max-height: 36px;
+          max-width: 160px;
+      }
+  }
+
+  /* ตั้งค่าปุ่ม Hamburger (ซ่อนในหน้าจอปกติ) */
+  .hamburger-menu {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #333;
+      /* เปลี่ยนสีตามธีมเว็บ */
+  }
+
+  /* Removed fragmented mobile nav styles */
+
+
+
+
+
+
+  a {
+      text-decoration: none;
+      color: var(--bg-light);
+  }
+
+  ul {
+      list-style: none;
+  }
+
+  .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+  }
+
+  .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+  }
+
+  .btn-primary {
+      background-color: var(--secondary-color);
+      color: white;
+  }
+
+  .btn-primary:hover {
+      background-color: #e68a00;
+  }
+
+  /* --- Header & Navigation --- */
+  header {
+      background-color: transparent;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      /* Transparent/Subtle Shadow */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+  }
+
+  .slider {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+
+  }
+
+  .prev {
+      position: absolute;
+      top: 70%;
+      left: 20px;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 10;
+  }
+
+  .next {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 10;
+  }
+
+
+
+
+
+
+
+
+  .lang-th {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 100;
+      cursor: pointer;
+      transition: color 0.3s;
+
+
+
+
+  }
+
+  .social {
+      color: var(--secondary-color);
+      font-size: 1rem;
+      font-weight: 100;
+      cursor: pointer;
+      transition: color 0.3s;
+      margin-right: 10px;
+      margin-left: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+  }
+
+  /* .lang-en {
+      color: var(--secondary-color);
+      font-size: 1.5rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: color 0.3s;
+      margin-right: 10px;
+      margin-left: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px; */
+
+  .lang-th:hover {
+      color: var(--secondary-color);
+  }
+
+  .lang-en:hover {
+      color: var(--primary-color);
+  }
+
+  .lang-th:active {
+      color: var(--primary-color);
+  }
+
+  .lang-en:active {
+      color: var(--primary-color);
+  }
+
+  .lang-th:focus {
+      color: var(--primary-color);
+  }
+
+  .lang-en:focus {
+      color: var(--primary-color);
+  }
+
+
+
+
+
+
+  nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+
+  }
+
+  .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--bg-light);
+      display: flex;
+      align-items: center;
+  }
+
+  .logo i {
+      margin-right: 10px;
+      color: var(--secondary-color);
+  }
+
+  .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+  }
+
+  .nav-links li a {
+      font-weight: 1000;
+      color: #fff;
+      transition: color 0.3s;
+  }
+
+  .nav-links li a:hover {
+      color: var(--secondary-color);
+  }
+
+  /* Dropdown styles for Terms & Conditions */
+  .nav-item.dropdown {
+      position: relative;
+  }
+
+  .dropdown-toggle {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-weight: 1000;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+  }
+
+  .dropdown-toggle i {
+      font-size: 0.9rem;
+  }
+
+  .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      background: white;
+      color: var(--text-dark);
+      min-width: 220px;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      padding: 8px 0;
+      display: none;
+      z-index: 1200;
+  }
+
+  .dropdown-menu li a {
+      display: block;
+      padding: 8px 16px;
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 600;
+  }
+
+  .dropdown-menu li a:hover {
+      background: var(--bg-light);
+      color: var(--secondary-color);
+  }
+
+  /* Show on hover for desktop */
+  @media (min-width: 769px) {
+      .nav-item.dropdown:hover>.dropdown-menu {
+          display: block;
+      }
+  }
+
+  /* show when JS toggles 'open' class */
+  .nav-item.dropdown.open>.dropdown-menu {
+      display: block !important;
+  }
+
+  /* Mobile: make dropdown expand inside nav stack */
+  @media (max-width: 768px) {
+      .dropdown-menu {
+          position: static;
+          box-shadow: none;
+          background: transparent;
+          padding: 0;
+      }
+
+      .dropdown-menu li a {
+          padding: 8px 0;
+      }
+  }
+
+  /* --- Hero Section (ส่วนหัวพร้อมภาพ) --- */
+  /* .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(10, 35, 66, 0.7), rgba(10, 35, 66, 0.8)), 
+                        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 60px; /* เพื่อไม่ให้เนื้อหาซ่อนใต้เฮดเดอร์ */
+  /* font-weight: 600;
+            font-size: 1.5rem;
+            font-family: 'Outfit', sans-serif;
+            font-style: italic;
+            font-variant: small-caps;
+            text-transform: uppercase;
+            text-decoration: underline;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            text-justify: inter-word;
+            text-indent: 2em;
+            text-transform: capitalize;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-spacing: 2em;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            overflow: hidden;
+            clip: rect(0, auto, auto, 0);
+            text-wrap: balance;
+            text-wrap: nowrap;
+            text-wrap: wrap;
+            text-wrap: balanced;
+            text-wrap: none;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 5%;
+            text-align: center;
+            position: relative;
+        }  */
+
+
+
+
+
+  /* .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        } */
+
+  /* Tracking Widget (กล่องเช็คพัสดุ) */
+  /* .tracking-box {
+            background: var(--bg-light);
+             padding: 0.5rem;
+             border-radius: 50px;
+             display: flex;
+             border: 1px solid var(--glass-border);
+             backdrop-filter: blur(10px);
+             max-width: 600px;
+             margin: 0 auto;
+             box-shadow: 0 20px 40px -20px rgba(249, 115, 22, 0.2);
+} */
+
+
+  /* .tracking-input {
+         flex: 1;
+    background: transparent;
+    border: none;
+    padding: 1rem 1.5rem;
+    color: var(--secondary-color);
+    font-size: 1rem;
+    outline: none;
+        } */
+
+  .hero {
+      /* ปรับความสูงให้พอดีกับเนื้อหาที่เยอะขึ้น */
+      min-height: 90vh;
+      background: linear-gradient(#3a6fb1b3, var(--secondary-color)),
+          url(./assets/bg-hero.png) no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 100px 0 60px;
+      /* เพิ่ม padding บนล่าง */
+  }
+
+  .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      opacity: 0.9;
+  }
+
+  /* =========================================
+           --- NEW Tracking Widget CSS Start ---
+        ========================================= */
+
+  /* Wrapper เพื่อจัดระยะห่างจากข้อความด้านบน */
+  .tracking-widget-wrapper {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+  }
+
+  /* กล่องคอนเทนเนอร์หลักของ Widget */
+  .main-tracking-container {
+      background: white;
+      color: var(--text-dark);
+      max-width: 850px;
+      width: 100%;
+      padding: 35px;
+      border-radius: 16px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+      /* เงาฟุ้งๆ ให้ดูลอย */
+      text-align: left;
+  }
+
+  /* หัวข้อ Widget */
+  .section-title-1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 25px;
+      text-align: center;
+  }
+
+  /* ช่องกรอก Input */
+  #trackingInput {
+      width: 100%;
+      padding: 15px 20px;
+      font-size: 1.1rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      outline: none;
+      transition: all 0.3s ease;
+      font-family: 'Sarabun', sans-serif;
+  }
+
+  #trackingInput:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 4px rgba(10, 35, 66, 0.1);
+      /* เงาสีฟ้าจางๆ เมื่อ Focus */
+  }
+
+  /* หัวข้อเลือกขนส่ง */
+  .courier-selector-title {
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #555;
+      font-size: 1.1rem;
+  }
+
+  /* Grid สำหรับวางโลโก้ */
+  .courier-grid {
+      display: grid;
+      /* จัดเรียงอัตโนมัติ ขนาดต่ำสุด 100px สูงสุดเต็มพื้นที่ */
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 15px;
+      margin-bottom: 30px;
+  }
+
+  /* การ์ดโลโก้แต่ละอัน */
+  .courier-item {
+      background: #f9f9f9;
+      border: 2px solid #eee;
+      border-radius: 12px;
+      padding: 15px 10px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+  }
+
+  .courier-item img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      /* ทำให้เป็นสีเทาและจางลงเมื่อยังไม่เลือก */
+      filter: grayscale(100%);
+      opacity: 0.5;
+      transition: all 0.3s ease;
+  }
+
+  /* Hover State (เอาเมาส์ชี้) */
+  .courier-item:hover {
+      border-color: #ccc;
+      transform: translateY(-3px);
+      /* เด้งขึ้นเล็กน้อย */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .courier-item:hover img {
+      opacity: 0.8;
+      filter: grayscale(30%);
+  }
+
+  /* Selected State (เมื่อถูกคลิกเลือก) - สำคัญมาก */
+  .courier-item.selected {
+      border-color: var(--primary-color);
+      /* กรอบสีน้ำเงินเข้ม */
+      background-color: #f0f5ff;
+      /* พื้นหลังสีฟ้าอ่อน */
+      box-shadow: 0 8px 20px rgba(10, 35, 66, 0.15);
+      transform: translateY(-3px);
+  }
+
+  .courier-item.selected img {
+      filter: grayscale(0%);
+      /* คืนสีธรรมชาติ */
+      opacity: 1;
+      /* ชัดเจนเต็มที่ */
+  }
+
+  /* ปุ่มกดค้นหา */
+  #mainTrackBtn {
+      width: 100%;
+      padding: 15px;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+  }
+
+  /* สถานะปุ่มกดไม่ได้ (Disabled) */
+  #mainTrackBtn:disabled {
+      background-color: #ccc;
+      color: #888;
+      cursor: not-allowed;
+      box-shadow: none;
+  }
+
+  /* Responsive ปรับแต่งสำหรับมือถือ */
+  @media (max-width: 768px) {
+      .hero-content h1 {
+          font-size: 2rem;
+      }
+
+      .main-tracking-container {
+          padding: 25px 20px;
+      }
+
+      .section-title-1 {
+          font-size: 1.3rem;
+      }
+
+      .courier-grid {
+          grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+          gap: 10px;
+      }
+
+      .courier-item {
+          height: 70px;
+          padding: 10px;
+      }
+
+      #mainTrackBtn {
+          font-size: 1.1rem;
+      }
+  }
+
+  /* =========================================
+           --- NEW Tracking Widget CSS End ---
+        ========================================= */
+
+
+
+
+
+
+
+  /* --- Services Section --- */
+  .section-padding {
+      padding: 80px 0;
+  }
+
+  .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+  }
+
+  .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+  }
+
+  .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+  }
+
+  .service-card {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+  }
+
+  .service-card:hover {
+      transform: translateY(-10px);
+  }
+
+  .service-icon {
+      font-size: 3rem;
+      color: var(--secondary-color);
+      margin-bottom: 20px;
+  }
+
+  .service-card h3 {
+      margin-bottom: 15px;
+      color: var(--primary-color);
+  }
+
+  /* --- Features/Why Us Section --- */
+  .features {
+      background-color: var(--primary-color);
+      color: white;
+  }
+
+  .features .section-title h2 {
+      color: white;
+  }
+
+  .feature-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 30px;
+  }
+
+  .feature-icon {
+      font-size: 2rem;
+      color: var(--secondary-color);
+      margin-right: 20px;
+      margin-top: 5px;
+  }
+
+  /* --- Footer --- */
+  footer {
+      background: #051324;
+      color: #bbb;
+      padding: 60px 0 20px;
+  }
+
+  .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+  }
+
+  .footer-col h4 {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+  }
+
+  .footer-col ul li {
+      margin-bottom: 10px;
+  }
+
+  .footer-col ul li a:hover {
+      color: var(--secondary-color);
+  }
+
+  .copyright {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #222;
+      font-size: 0.9rem;
+  }
+
+  /* --- Responsive Design (มือถือ) --- */
+  @media (max-width: 768px) {
+      .nav-links {
+          display: none;
+          /* ซ่อนเมนูบนมือถือ (ในที่นี้ทำแบบง่าย) */
+      }
+
+      .hero-content h1 {
+          font-size: 2rem;
+      }
+
+      /* .tracking-box {
+                flex-direction: column;
+            } */
+
+      /* .tracking-input {
+                width: 100%;
+            } */
+  }
+
+  .social {
+      align-items: space-between;
+      bottom: 2%;
+      right: 2%;
+      z-index: 1;
+      position: fixed;
+      display: flex;
+
+  }
+
+
+  .social a {
+      width: 40px;
+      height: 40px;
+      background: var(--secondary-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0.5rem;
+      transition: background 0.3s;
+  }
+
+  .social a:hover {
+      background: var(--glass-border);
+  }
+
+  .social a:active {
+      transform: translateY(2px);
+  }
+
+  .social a i {
+      font-size: 1.5rem;
+  }
+
+  .social a:hover i {
+      color: var(--text-light);
+  }
+
+  .box-track {
+      font-family: 'Sarabun', sans-serif;
+      /* หรือฟอนต์ที่คุณใช้อยู่ */
+      padding: 40px 20px;
+      background-color: #f9f9f9;
+      text-align: center;
+  }
+
+  .section-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #333;
+  }
+
+  /* กล่องรวม input */
+  .main-tracking-container {
+      background: var(--glass-border);
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-family: 'Sarabun', sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      outline: none;
+      transition: border-color 0.3s;
+      border-radius: 8px;
+
+  }
+
+  /* ช่องกรอกเลขพัสดุ */
+  #trackingInput {
+      width: 80%;
+      padding: 15px;
+      font-size: 18px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 25px;
+      outline: none;
+      transition: border-color 0.3s;
+  }
+
+  #trackingInput:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+      outline: none;
+      transition: border-color 0.3s;
+      border-radius: 8px;
+
+  }
+
+  /* ส่วนเลือกขนส่ง */
+  .courier-selector-title {
+      margin-bottom: 15px;
+      font-weight: bold;
+      color: #555;
+      font-family: 'Sarabun', sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      outline: none;
+      transition: border-color 0.3s;
+      border-radius: 8px;
+
+  }
+
+  .courier-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 15px;
+      margin-bottom: 25px;
+      font-family: 'Sarabun', sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      outline: none;
+      transition: border-color 0.3s;
+      border-radius: 8px;
+
+
+  }
+
+  /* การ์ดของแต่ละขนส่ง */
+  .courier-item {
+      border: 2px solid #eee;
+      border-radius: 8px;
+      padding: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70px;
+      /* Fix height เพื่อความสวยงาม */
+      font-family: 'Sarabun', sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      outline: none;
+      transition: border-color 0.3s;
+      border-radius: 8px;
+
+
+  }
+
+  .courier-item img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      /* ใช้ filter grayscale เพื่อให้ดูว่ายังไม่ได้เลือก */
+      filter: grayscale(100%);
+      opacity: 0.6;
+  }
+
+  .courier-item:hover {
+      border-color: #bbb;
+      transform: translateY(-2px);
+  }
+
+  /* สถานะเมื่อถูกเลือก */
+  .courier-item.selected {
+      border-color: #007bff;
+      background-color: #f0f7ff;
+      box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+  }
+
+  .courier-item.selected img {
+      filter: grayscale(0%);
+      /* คืนสีเมื่อเลือก */
+      opacity: 1;
+  }
+
+  /* ปุ่มค้นหาหลัก */
+  #mainTrackBtn {
+      padding: 15px 40px;
+      font-size: 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-family: 'Sarabun', sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      outline: none;
+      transition: border-color 0.3s;
+      border-radius: 8px;
+
+  }
+
+  #mainTrackBtn:hover {
+      background-color: #0056b3;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+      outline: none;
+      transition: border-color 0.3s;
+      border-radius: 8px;
+
+  }
+
+  #mainTrackBtn:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+  }
+
+  .box-track {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-family: 'Sarabun', sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      outline: none;
+      transition: border-color 0.3s;
+      border-radius: 8px;
+
+  }
+
+  .section-title-1 {
+      margin-bottom: 30px;
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--bg-light);
+      background-color: var(--secondary-color);
+      border-radius: 10px;
+      text-align: center;
+  }
+
+  .lang-switch {
+      cursor: pointer;
+      font-weight: bold;
+      color: #888;
+      /* สีตอนยังไม่เลือก */
+      transition: 0.3s;
+  }
+
+  .lang-switch:hover {
+      color: #007bff;
+      /* สีตอนเอาเมาส์ชี้ */
+  }
+
+  .lang-switch.active {
+      color: #007bff;
+      /* สีน้ำเงินสำหรับภาษาที่ถูกเลือกอยู่ */
+      text-decoration: underline;
+  }
+
+  /* CSS สำหรับซ่อน/แสดงเนื้อหา */
+  /* ถ้า body เป็น th ให้ซ่อนเนื้อหา en */
+  body.lang-th .content-en {
+      display: none;
+  }
+
+  /* ถ้า body เป็น en ให้ซ่อนเนื้อหา th */
+  body.lang-en .content-th {
+      display: none;
+  }
+
+  .location-section {
+      padding: 80px 0;
+      background-color: var(--primary-color);
+  }
+
+  .location-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 40px;
+      align-items: stretch;
+      /* ให้ความสูงเท่ากัน */
+  }
+
+  /* กล่องข้อมูลฝั่งซ้าย */
+  .contact-info {
+      flex: 1;
+      min-width: 300px;
+      background: #f9fbfd;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .info-item {
+      display: flex;
+      margin-bottom: 30px;
+  }
+
+  .info-item:last-child {
+      margin-bottom: 0;
+  }
+
+  .icon-box {
+      width: 50px;
+      height: 50px;
+      background-color: #0a2342;
+      /* สีหลัก */
+      color: #ff9f1c;
+      /* สีรอง */
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-right: 20px;
+      flex-shrink: 0;
+  }
+
+  .info-text h3 {
+      font-size: 1.1rem;
+      color: #0a2342;
+      margin-bottom: 5px;
+      font-weight: 700;
+  }
+
+  .info-text p {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 5px;
+  }
+
+  .direction-link {
+      display: inline-block;
+      color: #ff9f1c;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      margin-top: 5px;
+      transition: 0.3s;
+  }
+
+  .direction-link:hover {
+      color: #e68a00;
+      text-decoration: underline;
+  }
+
+  /* กล่องแผนที่ฝั่งขวา */
+  .map-frame {
+      position: relative;
+      flex: 1.5;
+      /* ให้พื้นที่แผนที่กว้างกว่าข้อมูลเล็กน้อย */
+      min-width: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      /* ใช้ filter grayscale เพื่อให้ดูว่ายังไม่ได้เลือก */
+      filter: grayscale(100%);
+      opacity: 0.6;
+  }
+
+  .courier-item:hover {
+      border-color: #bbb;
+      transform: translateY(-2px);
+  }
+
+  /* สถานะเมื่อถูกเลือก */
+  .courier-item.selected {
+      border-color: #007bff;
+      background-color: #f0f7ff;
+      box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+  }
+
+  .courier-item.selected img {
+      filter: grayscale(0%);
+      /* คืนสีเมื่อเลือก */
+      opacity: 1;
+  }
+
+  /* ปุ่มค้นหาหลัก */
+  #mainTrackBtn {
+      padding: 15px 40px;
+      font-size: 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-family: 'Sarabun', sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      outline: none;
+      transition: border-color 0.3s;
+      border-radius: 8px;
+
+  }
+
+  #mainTrackBtn:hover {
+      background-color: #0056b3;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+      outline: none;
+      transition: border-color 0.3s;
+      border-radius: 8px;
+
+  }
+
+  #mainTrackBtn:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+  }
+
+  .box-track {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-family: 'Sarabun', sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      outline: none;
+      transition: border-color 0.3s;
+      border-radius: 8px;
+
+  }
+
+  .section-title-1 {
+      margin-bottom: 30px;
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--bg-light);
+      background-color: var(--secondary-color);
+      border-radius: 10px;
+      text-align: center;
+  }
+
+  .lang-switch {
+      cursor: pointer;
+      font-weight: bold;
+      color: #888;
+      /* สีตอนยังไม่เลือก */
+      transition: 0.3s;
+  }
+
+  .lang-switch:hover {
+      color: #007bff;
+      /* สีตอนเอาเมาส์ชี้ */
+  }
+
+  .lang-switch.active {
+      color: #007bff;
+      /* สีน้ำเงินสำหรับภาษาที่ถูกเลือกอยู่ */
+      text-decoration: underline;
+  }
+
+  /* CSS สำหรับซ่อน/แสดงเนื้อหา */
+  /* ถ้า body เป็น th ให้ซ่อนเนื้อหา en */
+  body.lang-th .content-en {
+      display: none;
+  }
+
+  /* ถ้า body เป็น en ให้ซ่อนเนื้อหา th */
+  body.lang-en .content-th {
+      display: none;
+  }
+
+  .location-section {
+      padding: 80px 0;
+      background-color: var(--primary-color);
+  }
+
+  .location-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 40px;
+      align-items: stretch;
+      /* ให้ความสูงเท่ากัน */
+  }
+
+  /* กล่องข้อมูลฝั่งซ้าย */
+  .contact-info {
+      flex: 1;
+      min-width: 300px;
+      background: #f9fbfd;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .info-item {
+      display: flex;
+      margin-bottom: 30px;
+  }
+
+  .info-item:last-child {
+      margin-bottom: 0;
+  }
+
+  .icon-box {
+      width: 50px;
+      height: 50px;
+      background-color: #0a2342;
+      /* สีหลัก */
+      color: #ff9f1c;
+      /* สีรอง */
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-right: 20px;
+      flex-shrink: 0;
+  }
+
+  .info-text h3 {
+      font-size: 1.1rem;
+      color: #0a2342;
+      margin-bottom: 5px;
+      font-weight: 700;
+  }
+
+  .info-text p {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 5px;
+  }
+
+  .direction-link {
+      display: inline-block;
+      color: #ff9f1c;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      margin-top: 5px;
+      transition: 0.3s;
+  }
+
+  .direction-link:hover {
+      color: #e68a00;
+      text-decoration: underline;
+  }
+
+  /* กล่องแผนที่ฝั่งขวา */
+  .map-frame {
+      flex: 1.5;
+      /* ให้พื้นที่แผนที่กว้างกว่าข้อมูลเล็กน้อย */
+      min-width: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      min-height: 400px;
+      /* ความสูงขั้นต่ำ */
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+      .location-container {
+          flex-direction: column;
+      }
+
+      .map-frame {
+          min-height: 300px;
+      }
+  }
+
+  /* --- Hero Slider --- */
+  .slider {
+      display: block;
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      height: clamp(300px, 60vh, 700px);
+      overflow: hidden;
+      margin: 20px auto;
+      align-items: center;
+      justify-items: center;
+      border-radius: 6px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+      background-color: transparent;
+      border: none;
+  }
+
+
+  .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      z-index: 1;
+  }
+
+  .slide.active {
+      opacity: 1;
+      z-index: 2;
+  }
+
+  .slide img,
+  .slide video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      -o-object-fit: cover;
+  }
+
+  .slide-1 {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  /* Responsive Slider */
+  @media (max-width: 768px) {
+      .slider {
+          height: 300px;
+      }
+  }
+
+  /* Slider Dots */
+  .dots-container {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 20;
+  }
+
+  .dot {
+      width: 12px;
+      height: 12px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 1s ease;
+  }
+
+  .dot.active {
+      width: 40px;
+      background-color: var(--secondary-color);
+      border-radius: 10px;
+  }
+
+  .slider .prev {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.45);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 100;
+      font-size: 20px;
+  }
+
+  /* --- Visitor Counter --- */
+  .visitor-counter {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #888;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+  }
+
+  /* Footer disclaimer */
+  .footer-disclaimer {
+      margin-top: 18px;
+      padding: 14px 18px;
+      background: rgba(255, 255, 255, 0.02);
+      color: #cfcfcf;
+      font-size: 0.9rem;
+      border-radius: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.03);
+      line-height: 1.5;
+  }
+
+  .footer-disclaimer p {
+      margin: 6px 0;
+  }
+
+  @media (max-width: 768px) {
+      .footer-disclaimer {
+          font-size: 0.85rem;
+          padding: 12px;
+      }
+  }
+
+  .visitor-counter i {
+      color: var(--secondary-color);
+  }
+
+  /* support both id formats (historical and current) */
+  #visitor-count,
+  #visitorCount {
+      font-weight: bold;
+      color: var(--text-light);
+      background: rgba(255, 255, 255, 0.06);
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-family: 'Courier New', Courier, monospace;
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Floating button on the map to open directions */
+  .map-open-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.55);
+      color: white;
+      padding: 8px 10px;
+      border-radius: 8px;
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      text-decoration: none;
+      font-weight: 600;
+      z-index: 12;
+      transition: background 0.15s ease, transform 0.08s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  }
+
+  .map-open-btn i {
+      color: var(--secondary-color);
+      font-size: 0.95rem;
+      margin-right: 2px;
+  }
+
+  .map-open-btn:hover {
+      background: rgba(0, 0, 0, 0.75);
+      transform: translateY(-2px);
+  }
+
+  @media (max-width: 600px) {
+      .map-open-btn {
+          top: 8px;
+          right: 8px;
+          padding: 6px 8px;
+          font-size: 0.85rem;
+      }
+  }
+
+  .slider .next {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.45);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 100;
+      font-size: 20px;
+  }
+
+  /* Accessibility: visible focus outlines for keyboard users */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  .nav-toggle:focus-visible,
+  .dropdown-toggle:focus-visible,
+  .back-btn:focus-visible {
+      outline: 3px solid rgba(255, 159, 28, 0.18);
+      outline-offset: 3px;
+      border-radius: 6px;
+  }
+
+  /* Skip-link for accessibility: visible on keyboard focus */
+  .skip-link {
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      z-index: 1001
+  }
+
+  .skip-link:focus,
+  .skip-link:active {
+      left: 10px;
+      top: 10px;
+      width: auto;
+      height: auto;
+      padding: 8px 12px;
+      background: #fff;
+      color: var(--primary-color);
+      border-radius: 6px;
+      box-shadow: 0 8px 30px rgba(10, 35, 66, 0.08);
+      text-decoration: none
+  }
+
+  /* =========================================
+   --- FIXED Mobile Hamburger Menu ---
+   ========================================= */
+  @media screen and (max-width: 768px) {
+
+      /* Ensure Nav wraps items */
+      nav {
+          flex-wrap: wrap !important;
+          justify-content: space-between;
+          padding: 10px 20px;
+      }
+
+      /* Show Hamburger */
+      .hamburger-menu {
+          display: block !important;
+          order: 1;
+          /* Keep it on the right */
+          font-size: 1.8rem;
+          color: #fff;
+          margin-left: auto;
+          /* Push to right if needed */
+          cursor: pointer;
+      }
+
+      /* Ensure logo stays left */
+      .logo {
+          order: 0;
+      }
+
+      /* Hide Desktop Menu Links by default, Show locally when active */
+      .nav-links {
+          display: none;
+          width: 100%;
+          flex-direction: column;
+          text-align: center;
+          background-color: #fff;
+          margin-top: 15px;
+          border-top: 1px solid #eee;
+          order: 3;
+          /* Force to bottom */
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+          border-radius: 0 0 8px 8px;
+      }
+
+      /* Active State for Menu */
+      .nav-links.active {
+          display: flex !important;
+      }
+
+      .nav-links li {
+          margin: 15px 0;
+          width: 100%;
+      }
+
+      .nav-links li a {
+          color: #333 !important;
+          /* Force dark text on white bg */
+          display: block;
+          padding: 5px 0;
+      }
+
+      .nav-links li a:hover {
+          color: var(--secondary-color) !important;
+      }
+
+      /* Hide Social/Lang to clean up mobile view */
+      .lang-th,
+      .social {
+          display: none !important;
+      }
+  }
