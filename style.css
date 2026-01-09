@@ -684,6 +684,115 @@
       margin-top: 5px;
   }
 
+  /* --- Packing Guide Section --- */
+  .packing-guide-section {
+      background-color: #f9fbfd;
+  }
+
+  .packing-steps {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+  }
+
+  .packing-step {
+      flex: 1;
+      min-width: 200px;
+      background: white;
+      padding: 30px 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      position: relative;
+      transition: transform 0.3s ease;
+      z-index: 1;
+  }
+
+  .packing-step:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .step-number {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 35px;
+      height: 35px;
+      background-color: var(--secondary-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border: 3px solid white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .step-icon {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      margin-top: 10px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .packing-step h3 {
+      font-size: 1.15rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+  }
+
+  .packing-step p {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.5;
+  }
+
+  .step-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: #ddd;
+      padding-top: 60px;
+      /* Align with icon area */
+  }
+
+  /* Responsive for Packing Guide */
+  @media (max-width: 900px) {
+      .packing-steps {
+          flex-direction: column;
+          align-items: center;
+      }
+
+      .packing-step {
+          width: 100%;
+          max-width: 500px;
+          margin-bottom: 20px;
+      }
+
+      .step-arrow {
+          transform: rotate(90deg);
+          margin: -10px 0 20px;
+          padding-top: 0;
+      }
+
+      /* Optional: Hide arrows on mobile if it looks cluttered */
+      /* .step-arrow { display: none; } */
+  }
+
+
+
+
   /* --- Footer --- */
   footer {
       background: #051324;
@@ -1772,3 +1881,4 @@
           bottom: 10px;
       }
   }
+
