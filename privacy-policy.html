@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="privacy.title">นโยบายความเป็นส่วนตัว</title>
-    <link rel="stylesheet" href="privacy.css">
+    <title data-i18n="privacy.title">นโยบายความเป็นส่วนตัว - Express Center</title>
+    <link rel="stylesheet" href="style.css"> <!-- Main Styles -->
+    <link rel="stylesheet" href="privacy.css"> <!-- Specific Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3269770193855035"
      crossorigin="anonymous"></script>
 </head>
 
-<body style="background:linear-gradient(to bottom, #0b1c2d, #1e3c72, #2a5298,#0b1c2d);">
+<body style="background:linear-gradient(to bottom, #0b1c2d, #1e3c72, #2a5298, #0b1c2d);">
     <a class="skip-link" href="#maincontent">ข้ามไปยังเนื้อหา</a>
     <header>
         <nav>
-            <div class=" logo">
+            <div class="logo">
                 <i class="fas fa-truck-fast" aria-hidden="true"></i> Express Center
             </div>
             <ul class="nav-links">
@@ -27,7 +29,7 @@
                 <li><a href="content.html" data-i18n="nav.terms">เงื่อนไขและข้อกำหนด</a></li>
             </ul>
             <div class="lang-th">
-                <span id="btn-th" class="lang-switch active " onclick="setLanguage('th')">ไทย</span>
+                <span id="btn-th" class="lang-switch active" onclick="setLanguage('th')">ไทย</span>
                 <span> | </span>
                 <span id="btn-en" class="lang-switch" onclick="setLanguage('en')">Eng</span>
             </div>
@@ -42,83 +44,91 @@
     </header>
 
     <section id="maincontent" class="section-padding container">
-        <div class="section-title" style="margin-top: 100px;">
+        <div class="section-title" style="margin-top: 100px; color: white;">
             <h2>นโยบายความเป็นส่วนตัว (Privacy Policy)</h2>
-            <p>นโยบายความเป็นส่วนตัวฉบับนี้อธิบายถึงวิธีการที่เว็บไซต์นี้ (ต่อไปนี้เรียกว่า "เว็บไซต์") เก็บรวบรวม ใช้
-                และปกป้องข้อมูลส่วนบุคคลของผู้ใช้งาน</p>
+            <div style="width: 60px; height: 4px; background: #ff9f1c; margin: 10px auto;"></div>
+            <p style="color: #ddd;">อัปเดตล่าสุด: 10 มกราคม 2569</p>
         </div>
 
-        <div class="privacy-content content-wrapper">
-            <h3>1. การเก็บรวบรวมข้อมูลส่วนบุคคล</h3>
-            <p>เว็บไซต์อาจเก็บรวบรวมข้อมูลส่วนบุคคลของผู้ใช้งานเมื่อผู้ใช้งาน:</p>
-            <ul>
-                <li>เข้าชมเว็บไซต์</li>
-                <li>กรอกแบบฟอร์มติดต่อ</li>
-                <li>สมัครสมาชิกหรือรับข่าวสาร</li>
-            </ul>
-            <p>ข้อมูลที่อาจถูกเก็บรวบรวม ได้แก่:</p>
-            <ul>
-                <li>ชื่อ-นามสกุล</li>
-                <li>อีเมล</li>
-                <li>เบอร์โทรศัพท์</li>
-                <li>ข้อมูลการใช้งานเว็บไซต์ เช่น IP Address, ประเภทเบราว์เซอร์, หน้าที่เข้าชม</li>
-            </ul>
+        <div class="privacy-content content-wrapper"
+            style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+            <h3>1. บทนำ</h3>
+            <p>Express Center ("เรา", "ทางเรา", หรือ "เว็บไซต์") ตระหนักถึงความสำคัญของการคุ้มครองข้อมูลส่วนบุคคลของท่าน
+                เราจึงจัดทำนโยบายความเป็นส่วนตัวฉบับนี้ขึ้นเพื่อแจ้งให้ท่านทราบถึงรายละเอียดเกี่ยวกับการเก็บรวบรวม ใช้
+                และเปิดเผยข้อมูลส่วนบุคคลของท่าน รวมถึงสิทธิตามกฎหมายที่ท่านพึงมี</p>
 
-            <h3>2. การใช้ข้อมูลส่วนบุคคล</h3>
-            <p>เว็บไซต์ใช้ข้อมูลส่วนบุคคลของผู้ใช้งานเพื่อวัตถุประสงค์ดังต่อไปนี้:</p>
+            <h3>2. ข้อมูลส่วนบุคคลที่เราเก็บรวบรวม</h3>
+            <p>เราอาจเก็บรวบรวมข้อมูลส่วนบุคคลของท่านในกรณีต่างๆ ดังนี้:</p>
             <ul>
-                <li>เพื่อพัฒนาและปรับปรุงคุณภาพของเว็บไซต์</li>
-                <li>เพื่อตอบกลับคำถามหรือการติดต่อจากผู้ใช้งาน</li>
-                <li>เพื่อวิเคราะห์พฤติกรรมการใช้งานเว็บไซต์</li>
-                <li>เพื่อแสดงโฆษณาที่เหมาะสมกับผู้ใช้งาน</li>
+                <li><strong>ข้อมูลระบุตัวตน:</strong> ชื่อ, นามสกุล, เลขบัตรประจำตัวประชาชน
+                    (กรณีจำเป็นสำหรับการขนส่งระหว่างประเทศ)</li>
+                <li><strong>ข้อมูลการติดต่อ:</strong> ที่อยู่ในการจัดส่ง, หมายเลขโทรศัพท์, อีเมล, Line ID</li>
+                <li><strong>ข้อมูลการทำธุรกรรม:</strong> ประวัติการใช้บริการ, หมายเลขพัสดุ (Tracking Number),
+                    รายละเอียดการชำระเงิน</li>
+                <li><strong>ข้อมูลทางเทคนิค:</strong> หมายเลข IP Address, ข้อมูลคุกกี้ (Cookies),
+                    ประวัติการเข้าชมเว็บไซต์, อุปกรณ์ที่ใช้งาน</li>
             </ul>
 
-            <h3>3. คุกกี้ (Cookies)</h3>
-            <p>เว็บไซต์นี้ใช้คุกกี้เพื่อ:</p>
+            <h3>3. วัตถุประสงค์การใช้ข้อมูลส่วนบุคคล</h3>
+            <p>เราใช้ข้อมูลของท่านเพื่อวัตถุประสงค์ดังต่อไปนี้:</p>
             <ul>
-                <li>จดจำการตั้งค่าของผู้ใช้งาน</li>
-                <li>วิเคราะห์การเข้าชมเว็บไซต์</li>
-                <li>แสดงโฆษณาผ่านบริการของบุคคลที่สาม เช่น Google AdSense</li>
-            </ul>
-            <p>ผู้ใช้งานสามารถปิดการใช้งานคุกกี้ได้ผ่านการตั้งค่าเบราว์เซอร์ของตนเอง อย่างไรก็ตาม
-                การปิดคุกกี้อาจส่งผลต่อการใช้งานบางส่วนของเว็บไซต์</p>
-
-            <h3>4. การใช้ Google AdSense</h3>
-            <p>เว็บไซต์นี้ใช้บริการโฆษณาของ Google AdSense ซึ่งใช้คุกกี้ DoubleClick
-                เพื่อแสดงโฆษณาที่เหมาะสมกับผู้ใช้งาน</p>
-            <p>Google อาจใช้ข้อมูลเกี่ยวกับการเข้าชมเว็บไซต์นี้และเว็บไซต์อื่น ๆ เพื่อแสดงโฆษณาตามความสนใจของผู้ใช้งาน
-            </p>
-            <p>ผู้ใช้งานสามารถศึกษานโยบายความเป็นส่วนตัวของ Google ได้ที่เว็บไซต์ของ Google</p>
-
-            <h3>5. การเปิดเผยข้อมูลต่อบุคคลที่สาม</h3>
-            <p>เว็บไซต์จะไม่ขาย แลกเปลี่ยน หรือให้เช่าข้อมูลส่วนบุคคลของผู้ใช้งานแก่บุคคลที่สาม เว้นแต่:</p>
-            <ul>
-                <li>ได้รับความยินยอมจากผู้ใช้งาน</li>
-                <li>เป็นไปตามที่กฎหมายกำหนด</li>
+                <li><strong>เพื่อให้บริการ:</strong> การรับส่งพัสดุ, การแจ้งสถานะการจัดส่ง, การออกใบเสร็จรับเงิน</li>
+                <li><strong>เพื่อปรับปรุงบริการ:</strong> วิเคราะห์ข้อมูลเพื่อพัฒนาประสิทธิภาพของเว็บไซต์และการขนส่ง
+                </li>
+                <li><strong>เพื่อการตลาด (ตามความยินยอม):</strong> ส่งข่าวสาร โปรโมชั่น หรือสิทธิพิเศษต่างๆ</li>
+                <li><strong>เพื่อปฏิบัติตามกฎหมาย:</strong> การเก็บรักษาข้อมูลจราจรทางคอมพิวเตอร์
+                    หรือการให้ข้อมูลแก่หน่วยงานราชการเมื่อได้รับการร้องขอ</li>
             </ul>
 
-            <h3>6. การปกป้องข้อมูล</h3>
-            <p>เว็บไซต์มีมาตรการในการรักษาความปลอดภัยของข้อมูลส่วนบุคคล เพื่อป้องกันการเข้าถึง การเปิดเผย
-                หรือการเปลี่ยนแปลงข้อมูลโดยไม่ได้รับอนุญาต</p>
+            <h3>4. ระยะเวลาในการเก็บรักษาข้อมูล</h3>
+            <p>เราจะเก็บรักษาข้อมูลส่วนบุคคลของท่านไว้ตามระยะเวลาที่จำเป็นเพื่อบรรลุวัตถุประสงค์ที่ระบุไว้ในนโยบายนี้
+                หรือตามที่กฎหมายกำหนด (เช่น กฎหมายทางบัญชีและภาษีอากร ที่กำหนดให้เก็บรักษาเอกสารเป็นเวลาอย่างน้อย 5-10
+                ปี)</p>
 
-            <h3>7. สิทธิของผู้ใช้งาน</h3>
-            <p>ผู้ใช้งานมีสิทธิ:</p>
+            <h3>5. การเปิดเผยข้อมูลต่อบุคคลภายนอก</h3>
+            <p>เราอาจเปิดเผยข้อมูลของท่านให้แก่บุคคลภายนอกในกรณีดังต่อไปนี้:</p>
             <ul>
-                <li>ขอเข้าถึง แก้ไข หรือ ลบข้อมูลส่วนบุคคลของตนเอง</li>
-                <li>ถอนความยินยอมในการใช้ข้อมูลส่วนบุคคล</li>
+                <li><strong>ผู้ให้บริการขนส่ง (Third-party Carriers):</strong> เช่น ไปรษณีย์ไทย, Kerry, Flash, J&T
+                    เพื่อดำเนินการจัดส่งพัสดุของท่าน</li>
+                <li><strong>ผู้ให้บริการระบบ IT:</strong> ผู้ให้บริการโฮสติ้ง, ผู้พัฒนาระบบเว็บไซต์</li>
+                <li><strong>หน่วยงานรัฐ:</strong> ในกรณีที่มีคำสั่งตามกฎหมาย หรือเพื่อปกป้องสิทธิของเรา</li>
             </ul>
 
-            <h3>8. การเปลี่ยนแปลงนโยบายความเป็นส่วนตัว</h3>
-            <p>เว็บไซต์ขอสงวนสิทธิ์ในการเปลี่ยนแปลงนโยบายความเป็นส่วนตัวฉบับนี้โดยไม่ต้องแจ้งให้ทราบล่วงหน้า
-                ผู้ใช้งานควรตรวจสอบนโยบายนี้เป็นระยะ</p>
+            <h3>6. ความปลอดภัยของข้อมูล</h3>
+            <p>เราใช้มาตรการความปลอดภัยทางเทคนิคและการบริหารจัดการที่เหมาะสม เพื่อป้องกันการเข้าถึง แก้ไข
+                หรือทำลายข้อมูลส่วนบุคคลโดยไม่ได้รับอนุญาต เช่น การเข้ารหัสข้อมูล (Encryption),
+                การจำกัดสิทธิ์การเข้าถึงข้อมูล (Access Control)</p>
 
-            <h3>9. การติดต่อ</h3>
-            <p>หากมีคำถามเกี่ยวกับนโยบายความเป็นส่วนตัว สามารถติดต่อได้ที่:</p>
-            <p>
-                <strong>อีเมล:</strong> expresscentercnx65@email.com<br>
-                <strong>เว็บไซต์:</strong> <a href="#"></a>
-            </p>
-            <p><em>ประกาศ ณ วันที่: ____________</em></p>
+            <h3>7. นโยบายคุกกี้ (Cookies Policy)</h3>
+            <p>เว็บไซต์ของเรามีการใช้คุกกี้เพื่อเพิ่มประสบการณ์การใช้งานที่ดีแก่ท่าน:</p>
+            <ul>
+                <li><strong>คุกกี้ที่จำเป็น:</strong> ช่วยให้เว็บไซต์ทำงานได้ตามปกติ</li>
+                <li><strong>คุกกี้เพื่อการวิเคราะห์:</strong> ช่วยให้เราทราบจำนวนผู้เข้าชมและพฤติกรรมการใช้งาน (เช่น
+                    Google Analytics)</li>
+                <li><strong>คุกกี้โฆษณา:</strong> ใช้เพื่อนำเสนอเนื้อหาที่ตรงกับความสนใจของท่าน (เช่น Google AdSense)
+                </li>
+            </ul>
+            <p>ท่านสามารถตั้งค่าปฏิเสธการใช้งานคุกกี้ได้ผ่านเบราว์เซอร์ของท่าน
+                แต่อาจทำให้ฟังก์ชันบางอย่างของเว็บไซต์ทำงานไม่สมบูรณ์</p>
+
+            <h3>8. สิทธิของเจ้าของข้อมูลส่วนบุคคล</h3>
+            <p>ภายใต้ พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล (PDPA) ท่านมีสิทธิดังนี้:</p>
+            <ul>
+                <li>สิทธิในการขอเข้าถึงและขอรับสำเนาข้อมูลส่วนบุคคล</li>
+                <li>สิทธิในการขอแก้ไขข้อมูลให้ถูกต้อง</li>
+                <li>สิทธิในการขอลบหรือทำลายข้อมูล</li>
+                <li>สิทธิในการระงับการใช้ข้อมูล</li>
+                <li>สิทธิในการเพิกถอนความยินยอม</li>
+            </ul>
+
+            <h3>9. ช่องทางการติดต่อ</h3>
+            <p>หากท่านมีข้อสงสัยเกี่ยวกับนโยบายความเป็นส่วนตัว หรือต้องการใช้สิทธิของท่าน สามารถติดต่อเราได้ที่:</p>
+            <div class="contact-box" style="background: #f4f4f4; padding: 20px; border-radius: 8px; margin-top: 20px;">
+                <p><strong>Express Center</strong></p>
+                <p>159/3 ถนนช้างเผือก ตำบลศรีภูมิ อำเภอเมือง จังหวัดเชียงใหม่ 50200</p>
+                <p><strong>อีเมล:</strong> expresscentercnx65@gmail.com</p>
+                <p><strong>เบอร์โทรศัพท์:</strong> 098-879-5269</p>
+            </div>
         </div>
     </section>
 
@@ -127,8 +137,8 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="logo" style="color: white; margin-bottom: 20px;">
-                        <i class="fas fa-truck-fast" style="color: var(--secondary-color);" aria-hidden="true"></i> Express Center
-                        
+                        <i class="fas fa-truck-fast" style="color: var(--secondary-color);" aria-hidden="true"></i>
+                        Express Center
                     </div>
                     <p>มุ่งมั่นให้บริการขนส่งที่ดีที่สุด เพื่อขับเคลื่อนธุรกิจของคุณไปข้างหน้า</p>
                 </div>
@@ -136,23 +146,29 @@
                     <h4>ลิงก์ด่วน</h4>
                     <ul>
                         <li><a href="index.html">หน้าแรก</a></li>
-                        <li><a href="#">เกี่ยวกับเรา</a></li>
-                        <li><a href="#">บริการ</a></li>
+                        <li><a href="about.html">เกี่ยวกับเรา</a></li>
+                        <li><a href="index.html#services">บริการ</a></li>
                         <li><a href="#">ข่าวสาร</a></li>
-                        <li><a href="privacy-policy.html">นโยบายความเป็นส่วนตัว (Privacy Policy)</a></li>
+                        <li><a href="privacy-policy.html">นโยบายความเป็นส่วนตัว</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>ติดต่อเรา</h4>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 159/3 ถนนช้างเผือก ตำบลศรีภูมิ อำเภอเมือง
+                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 159/3 ถนนช้างเผือก ตำบลศรีภูมิ
+                            อำเภอเมือง
                             จังหวัดเชียงใหม่ 50200</li>
                         <li><i class="fas fa-phone" aria-hidden="true"></i> 0988795261 </li>
                         <li><i class="fas fa-envelope" aria-hidden="true"></i> expresscentercnx65@gmail.com</li>
                     </ul>
                 </div>
             </div>
-            <div class="®️copyrightBy-Div_Nat">
+
+            <div class="footer-disclaimer">
+                <p>เว็บไซต์นี้เป็นศูนย์รวมบริการขนส่ง ไม่ได้เป็นเจ้าของหรือดำเนินงานโดยบริษัทขนส่งใดโดยตรง</p>
+            </div>
+
+            <div class="copyright-div">
                 <p>&copy; 2023 Express Center. All rights reserved.</p>
             </div>
         </div>
@@ -160,9 +176,4 @@
     <script src="index.js"></script>
 </body>
 
-
 </html>
-
-
-
-
