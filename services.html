@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บริการและความรู้ - Express Center</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css"> <!-- Reusing about.css for layout elements -->
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Specific overrides for Services page */
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            height: 100%;
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon-large {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .step-timeline {
+            position: relative;
+            padding: 40px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+
+        .step-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .step-line {
+            position: absolute;
+            left: 24px;
+            top: 50px;
+            bottom: -40px;
+            width: 2px;
+            background: #e0e0e0;
+            z-index: 0;
+        }
+
+        .step-item:last-child .step-line {
+            display: none;
+        }
+
+        .knowledge-article {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .knowledge-article h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body style="background: var(--primary-color); text-color: var(--secondary-color);">
+    <!-- Navbar -->
+    <header
+        style="background: transparent; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3);">
+        <nav class="container">
+            <img src="/assets/logo.png" alt="logo" style="width: 100px;">
+            <!-- <div class="logo" style="color: var(--primary-color);">
+                <i class="fas fa-truck-fast" style="color: var(--secondary-color);"></i> Express Center
+            </div> -->
+            <ul class="nav-links">
+                <li><a href="index.html" style="color: white;">หน้าแรก</a></li>
+                <li><a href="index.html#services" style="color: white;">บริการของเรา</a></li>
+                <li><a href="services.html" class="active" style="color: var(--secondary-color);">บริการ & ความรู้</a>
+                </li>
+                <li><a href="about.html" style="color: white;">เกี่ยวกับเรา</a></li>
+                <li><a href="content.html" style="color: white;">เงื่อนไข</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Header Hero -->
+    <section class="page-header"
+        style="height: 40vh; background: linear-gradient(hwb(213 21% 36% / 0.902), hsla(210, 7%, 89%, 0.902)), url('assets/about.pg.png');">
+        <div class="container">
+            <h1 style="color: var(--secondary-color)">บริการและความรู้ด้านขนส่ง</h1>
+            <p>คู่มือครบวงจรสำหรับผู้ใช้งาน Express Center</p>
+        </div>
+    </section>
+
+    <!-- 1. Service Descriptions -->
+    <section class="container section-padding">
+        <div class="section-title">
+            <h2>ประเภทบริการของเรา</h2>
+            <p style="color: var(--secondary-color);">เลือกบริการที่เหมาะกับความต้องการของคุณ</p>
+        </div>
+        <div class="values-grid">
+            <div class="service-card">
+                <i class="fas fa-shipping-fast service-icon-large"></i>
+                <h3>1. ส่งพัสดุมาตรฐาน (Standard Delivery)</h3>
+                <p>บริการจัดส่งพัสดุทั่วไป ถึงปลายทางภายใน 1-3 วันทำการ ครอบคลุมทั่วประเทศ เหมาะสำหรับสินค้าทั่วไป
+                    เสื้อผ้า ของใช้</p>
+                <ul style="margin-top: 15px; font-size: 0.9rem; color: #666;">
+                    <li><i class="fas fa-check"></i> รองรับน้ำหนักสูงสุด 20-30 กก.</li>
+                    <li><i class="fas fa-check"></i> มีประกันสินค้าพื้นฐาน</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-couch service-icon-large"></i>
+                <h3>2. ส่งสินค้าชิ้นใหญ่ (Bulky Delivery)</h3>
+                <p>บริการขนส่งสินค้าขนาดใหญ่หรือมีน้ำหนักมาก เช่น เฟอร์นิเจอร์ เครื่องใช้ไฟฟ้า จักรยาน</p>
+                <ul style="margin-top: 15px; font-size: 0.9rem; color: #666;">
+                    <li><i class="fas fa-check"></i> รองรับน้ำหนัก 30-100 กก.</li>
+                    <li><i class="fas fa-check"></i> ดูแลพิเศษเพื่อป้องกันความเสียหาย</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-apple-alt service-icon-large"></i>
+                <h3>3. ผลไม้ (Fruit)</h3>
+                <p>บริการขนส่งผลไม้สดโดยเฉพาะ</p>
+                <ul style="margin-top: 15px; font-size: 0.9rem; color: #666;">
+                    <li><i class="fas fa-check"></i> กล่องโฟม/รถควบคุมอุณหภูมิ</li>
+                    <li><i class="fas fa-check"></i> ส่งด่วนภายใน 24 ชม. (บางพื้นที่)</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-hand-holding-usd service-icon-large"></i>
+                <h3>4. เก็บเงินปลายทาง (COD)</h3>
+                <p>บริการเก็บเงินค่าสินค้าปลายทาง ช่วยเพิ่มยอดขายและความมั่นใจให้ลูกค้าของคุณ</p>
+                <ul style="margin-top: 15px; font-size: 0.9rem; color: #666;">
+                    <li><i class="fas fa-check"></i> ค่าธรรมเนียมต่ำ</li>
+                    <li><i class="fas fa-check"></i> โอนเงินคืนรวดเร็ว</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Usage Steps -->
+    <section class="section-padding" style="background-color: #f9fbfd;">
+        <div class="container">
+            <div class="section-title">
+                <h2>ขั้นตอนการใช้งาน</h2>
+                <p>ง่ายๆ เพียง 4 ขั้นตอน</p>
+            </div>
+            <div class="step-timeline">
+                <div class="step-item">
+                    <div class="step-line"></div>
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>เตรียมสินค้าและแพ็คลงกล่อง</h3>
+                        <p>เลือกกล่องให้เหมาะสมกับขนาดสินค้า ห่อบับเบิ้ลกันกระแทกให้เรียบร้อย (ดูวิธีแพ็คได้ที่หน้าแรก)
+                        </p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-line"></div>
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>นำมาส่งที่จุดบริการ Express Center</h3>
+                        <p>แจ้งเจ้าหน้าที่ว่าต้องการส่งแบบไหน เจ้าหน้าที่จะช่วยเปรียบเทียบราคาจากทุกขนส่งให้คุณเลือก</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-line"></div>
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>ชำระเงินและรับใบเสร็จ</h3>
+                        <p>ชำระค่าบริการ (เงินสด/โอน) และรับใบเสร็จที่มีเลขพัสดุ (Tracking Number)</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>ติดตามสถานะพัสดุ</h3>
+                        <p>นำเลข Tracking ไปตรวจสอบสถานะได้ที่หน้าเว็บไซต์ หรือรอรับ SMS แจ้งเตือนเมื่อสินค้าถึงปลายทาง
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Knowledge Articles -->
+    <section class="container section-padding">
+        <div class="section-title">
+            <h2>สาระน่ารู้เรื่องขนส่ง</h2>
+        </div>
+
+        <div class="content-wrapper">
+            <!-- Article 1 -->
+            <div class="knowledge-article">
+                <h3><i class="fas fa-calculator"></i> วิธีคำนวณน้ำหนักตามปริมาตร (Volumetric Weight)</h3>
+                <p>บางครั้งค่าส่งอาจแพงกว่าที่คิดเพราะสินค้ามีขนาดใหญ่แต่เบา ขนส่งจะคิดราคาจาก "น้ำหนักตามปริมาตร"</p>
+                <div
+                    style="background: white; padding: 15px; margin: 15px 0; border: 1px dashed #ccc; text-align: center;">
+                    <strong>สูตร: (กว้าง x ยาว x สูง เป็น ซม.) / 5,000 หรือ 6,000</strong>
+                    <br><small>(ตัวหารขึ้นอยู่กับเงื่อนไขแต่ละขนส่ง)</small>
+                </div>
+                <p>หากน้ำหนักตามปริมาตรมากกว่าน้ำหนักจริง ขนส่งจะใช้น้ำหนักตามปริมาตรในการคำนวณค่าบริการ</p>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="knowledge-article">
+                <h3><i class="fas fa-shield-alt"></i> การประกันสินค้าและการเคลม</h3>
+                <p>โดยปกติขนส่งจะมีประกันสินค้าเสียหาย/สูญหายวงเงินพื้นฐาน (เช่น ไม่เกิน 2,000 บาท) หากสินค้ามูลค่าสูง
+                    แนะนำให้ซื้อประกันเสริม</p>
+                <p><strong>เอกสารที่ต้องใช้เมื่อยื่นเคลม:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>รูปถ่ายสินค้าสภาพสมบูรณ์ก่อนส่งและหลังแพ็ค</li>
+                    <li>รูปถ่ายกล่องภายนอกที่เสียหาย</li>
+                    <li>รูปถ่ายสินค้าภายในที่เสียหาย</li>
+                    <li>ใบเสร็จรับเงินยืนยันมูลค่าสินค้า</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Express Center. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
