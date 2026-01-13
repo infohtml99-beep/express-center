@@ -145,7 +145,7 @@
 
     .split-text p {
         margin-bottom: 20px;
-        color: var(--text-light);
+        color: var(--primary-color);
     }
 
     .split-image {
