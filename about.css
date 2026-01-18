@@ -242,3 +242,93 @@ header {
         margin: 10px auto;
     }
 }
+
+/* --- New Stats Section --- */
+.stats-section {
+    background: white;
+    padding: 60px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.stat-item p {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* --- New Differentiation Section (Comparison) --- */
+.diff-section {
+    background: #fdfdfd;
+    padding: 80px 0;
+}
+
+.diff-table-container {
+    overflow-x: auto;
+    margin-top: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+}
+
+.diff-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    min-width: 600px;
+    /* Force scroll on small mobile */
+}
+
+.diff-table th,
+.diff-table td {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    font-size: 1rem;
+}
+
+.diff-table th {
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+.diff-table th:first-child,
+.diff-table td:first-child {
+    text-align: left;
+    padding-left: 30px;
+    font-weight: 600;
+    color: var(--primary-color);
+    width: 30%;
+}
+
+.diff-table tr:last-child td {
+    border-bottom: none;
+}
+
+.check-icon {
+    color: #27ae60;
+    font-size: 1.2rem;
+}
+
+.cross-icon {
+    color: #e74c3c;
+    font-size: 1.2rem;
+}
+
+
+
