@@ -432,3 +432,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Back to Top Button
+const backToTopBtn = document.getElementById("backToTopBtn");
+
+if (backToTopBtn) {
+    window.addEventListener("scroll", scrollFunction);
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            backToTopBtn.style.display = "flex";
+        } else {
+            backToTopBtn.style.display = "none";
+        }
+    }
+
+    backToTopBtn.addEventListener('click', function () {
+        // Smooth scroll to top
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+
+
