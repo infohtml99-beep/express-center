@@ -1,58 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.expresscenter.com/index.html</loc>
+    <loc>https://expercenter.shop//index.html</loc>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.expresscenter.com/about.html</loc>
+    <loc>https://expercenter.shop/about.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.expresscenter.com/services.html</loc>
+    <loc>https://expercenter.shop/services.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.expresscenter.com/knowledge.html</loc>
+    <loc>https://expercenter.shop/knowledge.html</loc>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.expresscenter.com/knowledge-packing.html</loc>
+    <loc>https://expercenter.shop/knowledge-packing.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.expresscenter.com/knowledge-transport.html</loc>
+    <loc>https://expercenter.shop/knowledge-transport.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.expresscenter.com/knowledge-documents.html</loc>
+    <loc>https://expercenter.shop/knowledge-documents.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.expresscenter.com/knowledge-cost-saving.html</loc>
+    <loc>https://expercenter.shop/knowledge-cost-saving.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.expresscenter.com/content.html</loc>
+    <loc>https://expercenter.shop/content.html</loc>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://www.expresscenter.com/terms.html</loc>
+    <loc>https://expercenter.shop/terms.html</loc>
     <priority>0.3</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://www.expresscenter.com/privacy-policy.html</loc>
+    <loc>https://expercenter.shop/privacy-policy.html</loc>
     <priority>0.3</priority>
     <changefreq>yearly</changefreq>
   </url>
 </urlset>
+
