@@ -330,83 +330,98 @@ function setLanguage(lang) {
 window.setLanguage = setLanguage;
 
 // --- Hero Slider Logic ---
+// --- Slider Logic (Multi-instance) ---
 document.addEventListener('DOMContentLoaded', function () {
-    const slides = document.querySelectorAll('.slide');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
-    const dotsContainer = document.querySelector('.dots-container');
-    let currentSlide = 0;
-    const slideInterval = 5000; // 5 seconds
-    let slideTimer;
+    const sliders = document.querySelectorAll('.slider');
 
-    if (slides.length > 0) {
-        // Create dots if container exists
-        if (dotsContainer) {
-            slides.forEach((_, index) => {
-                const dot = document.createElement('div');
-                dot.classList.add('dot');
-                if (index === 0) dot.classList.add('active');
-                dot.addEventListener('click', () => {
-                    showSlide(index);
+    sliders.forEach(slider => {
+        initSlider(slider);
+    });
+
+    function initSlider(slider) {
+        const slides = slider.querySelectorAll('.slide');
+        const prevBtn = slider.querySelector('.prev');
+        const nextBtn = slider.querySelector('.next');
+        const dotsContainer = slider.querySelector('.dots-container');
+        let currentSlide = 0;
+        const slideInterval = 5000; // 5 seconds
+        let slideTimer;
+
+        if (slides.length > 0) {
+            // Create dots if container exists
+            if (dotsContainer) {
+                // Clear existing dots first to avoid duplicates if re-initialized
+                dotsContainer.innerHTML = '';
+
+                slides.forEach((_, index) => {
+                    const dot = document.createElement('div');
+                    dot.classList.add('dot');
+                    if (index === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        showSlide(index);
+                        resetTimer();
+                    });
+                    dotsContainer.appendChild(dot);
+                });
+            }
+
+            // Ensure first slide is active initially
+            // If no slide is active, make the first one active
+            if (!slider.querySelector('.slide.active')) {
+                slides[0].classList.add('active');
+            }
+
+            function updateDots() {
+                if (!dotsContainer) return;
+                const dots = dotsContainer.querySelectorAll('.dot');
+                dots.forEach((dot, index) => {
+                    if (index === currentSlide) dot.classList.add('active');
+                    else dot.classList.remove('active');
+                });
+            }
+
+            function showSlide(n) {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (n + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active');
+                updateDots();
+            }
+
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
+
+            function prevSlide() {
+                showSlide(currentSlide - 1);
+            }
+
+            function startTimer() {
+                slideTimer = setInterval(nextSlide, slideInterval);
+            }
+
+            function resetTimer() {
+                clearInterval(slideTimer);
+                startTimer();
+            }
+
+            // Event listeners
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    nextSlide();
                     resetTimer();
                 });
-                dotsContainer.appendChild(dot);
-            });
-        }
+            }
 
-        // Ensure first slide is active initially
-        slides[0].classList.add('active');
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    prevSlide();
+                    resetTimer();
+                });
+            }
 
-        function updateDots() {
-            const dots = document.querySelectorAll('.dot');
-            dots.forEach((dot, index) => {
-                if (index === currentSlide) dot.classList.add('active');
-                else dot.classList.remove('active');
-            });
-        }
-
-        function showSlide(n) {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (n + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-            updateDots();
-        }
-
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
-
-        function prevSlide() {
-            showSlide(currentSlide - 1);
-        }
-
-        function startTimer() {
-            slideTimer = setInterval(nextSlide, slideInterval);
-
-        }
-
-        function resetTimer() {
-            clearInterval(slideTimer);
+            // Start auto slide
             startTimer();
         }
-
-        // Event listeners
-        if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                nextSlide();
-                resetTimer();
-            });
-        }
-
-        if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                prevSlide();
-                resetTimer();
-            });
-        }
-
-        // Start auto slide
-        startTimer();
     }
 });
 
@@ -455,6 +470,3 @@ if (backToTopBtn) {
         });
     });
 }
-
-
-
