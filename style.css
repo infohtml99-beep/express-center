@@ -410,7 +410,7 @@
       /* ปรับความสูงให้พอดีกับเนื้อหาที่เยอะขึ้น */
       min-height: 90vh;
       background: linear-gradient(#3a6fb1b3, var(--secondary-color)),
-          url(./assets/NEWYEAR.png) no-repeat center center/cover;
+          url(./assets/bg-hero.png) no-repeat center center/cover;
       display: flex;
       align-items: center;
       justify-content: center;
