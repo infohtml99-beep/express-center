@@ -280,9 +280,15 @@ const translations = {
         'cta.button': 'Request a Quote',
         'footer.visitors': 'Visitors:',
         'visitors.label': 'Website visitors:',
-        'disclaimer.logo': '"Logos are trademarks of their respective companies and are used for reference only."',
+        'disclaimer.logo':'Logos are trademarks of their respective companies and are used for reference only',
         'disclaimer.owner': 'This website aggregates shipping services and is not owned or operated by any carrier.',
-        'disclaimer.purpose': 'This site is provided to help customers check tracking numbers only.'
+        'disclaimer.purpose': 'This site is provided to help customers check tracking numbers only.',
+        'our.services.title-1':'In the era of rapidly growing e-commerce, shipping is no longer just about moving parcels from point A to point B. It has become the “core factor” that determines the success of online businesses. Stores that deliver faster, offer lower shipping costs, and ensure products arrive undamaged naturally gain a competitive advantage in today’s marketplace.',
+        'our.services.title-2':'However, the challenge most entrepreneurs face is the “complexity” of managing multiple shipping providers. Sometimes Flash Express is cheaper for large parcels, while Kerry Express delivers faster in certain areas, or Thailand Post EMS provides the best coverage for remote locations. Having to use multiple apps and visit different branches wastes both time and unnecessary costs.',
+        'our.services.title-3':'was created specifically to solve this pain point.We are not just a parcel drop-off shop — we are a “Service Agent” that connects the systems of all leading logistics providers into one platform. With our modern cloud-based service,  we can instantly compare prices, check delivery times, and generate tracking numbers from  multiple carriers, allowing you to “choose the best option” for every order without being tied to a single provider.',
+         'our.services.title-4':'In-depth analysis of the strengths of each transportation service:How to choose the most cost-effective option?',
+        'our.services.title-5':''
+
     }
 };
 
