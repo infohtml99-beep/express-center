@@ -56,62 +56,44 @@ document.addEventListener('DOMContentLoaded', function () {
     const initialLang = localStorage.getItem('lang') || 'th';
     setLanguage(initialLang);
 
-    // --- Visitor Counter Logic (uses api.counterapi.dev) ---
+    // --- Visitor Counter Logic (localStorage-based) ---
     (function initVisitorCounter() {
         const visitorCountElement = document.getElementById('visitorCount');
         if (!visitorCountElement) return;
 
-        const NAMESPACE = 'express-center-main';
-        const KEY = 'visits';
+        const STORAGE_KEY = 'express_center_visitor_count';
         const DAY_KEY = 'express_center_last_visit_date';
 
         function setDisplay(value) {
             visitorCountElement.innerText = (typeof value === 'number') ? value.toLocaleString() : '—';
         }
 
-        async function getCount() {
-            try {
-                const res = await fetch(`https://api.counterapi.dev/v1/${NAMESPACE}/${KEY}/`);
-                if (!res.ok) throw new Error('Failed to fetch count');
-                const data = await res.json();
-                return (data && typeof data.count === 'number') ? data.count : 0;
-            } catch (e) {
-                console.error('Visitor Counter (get) error:', e);
-                return null;
-            }
+        function getCount() {
+            const count = localStorage.getItem(STORAGE_KEY);
+            return count ? parseInt(count, 10) : 0;
         }
 
-        async function hitCount() {
-            try {
-                const res = await fetch(`https://api.counterapi.dev/v1/${NAMESPACE}/${KEY}/up`);
-                if (!res.ok) throw new Error('Failed to increment count');
-                const data = await res.json();
-                return (data && typeof data.count === 'number') ? data.count : null;
-            } catch (e) {
-                console.error('Visitor Counter (hit) error:', e);
-                return null;
-            }
+        function incrementCount() {
+            const currentCount = getCount();
+            const newCount = currentCount + 1;
+            localStorage.setItem(STORAGE_KEY, newCount.toString());
+            return newCount;
         }
 
-        (async function () {
-            setDisplay('...');
-            const today = new Date().toISOString().slice(0, 10);
-            const lastVisit = localStorage.getItem(DAY_KEY);
+        // Check if this is a new visit (today)
+        const today = new Date().toISOString().slice(0, 10);
+        const lastVisit = localStorage.getItem(DAY_KEY);
 
-            if (lastVisit !== today) {
-                const newCount = await hitCount();
-                if (newCount !== null) {
-                    setDisplay(newCount);
-                    localStorage.setItem(DAY_KEY, today);
-                } else {
-                    const current = await getCount();
-                    setDisplay(current);
-                }
-            } else {
-                const current = await getCount();
-                setDisplay(current);
-            }
-        })();
+        if (lastVisit !== today) {
+            // New visit today - increment counter
+            const newCount = incrementCount();
+            setDisplay(newCount);
+            localStorage.setItem(DAY_KEY, today);
+        } else {
+            // Already visited today - just display current count
+            const currentCount = getCount();
+            setDisplay(currentCount);
+        }
     })();
 });
 document.addEventListener('DOMContentLoaded', function () {
