@@ -637,6 +637,137 @@
       gap: 30px;
   }
 
+  .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+      align-items: stretch;
+  }
+
+  .pricing-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(10, 35, 66, 0.08);
+      border: 1px solid #edf2f7;
+  }
+
+  .pricing-summary-card h3,
+  .pricing-calculator-card h3 {
+      color: var(--primary-color);
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+  }
+
+  .pricing-summary-card p,
+  .pricing-calculator-card p {
+      color: #556;
+      font-size: 0.98rem;
+  }
+
+  .pricing-benefits-list {
+      list-style: disc;
+      padding-left: 18px;
+      color: #334155;
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+      margin-bottom: 12px;
+  }
+
+  .pricing-note {
+      font-size: 0.92rem;
+      color: #5b6b7f;
+      line-height: 1.5;
+  }
+
+  .pricing-header-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+  }
+
+  .pricing-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #fff4e6;
+      color: #b05d00;
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+  }
+
+  .pricing-label {
+      display: block;
+      margin-bottom: 8px;
+      color: #0f172a;
+      font-weight: 600;
+  }
+
+  #weightRange {
+      width: 100%;
+      accent-color: var(--secondary-color);
+      margin-bottom: 14px;
+  }
+
+  .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      overflow: hidden;
+      border-radius: 12px;
+  }
+
+  .price-table th,
+  .price-table td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid #edf2f7;
+      vertical-align: top;
+  }
+
+  .price-table thead th {
+      background: #0a2342;
+      color: #fff;
+      font-weight: 700;
+  }
+
+  .price-table tbody tr:nth-child(even) {
+      background: #f9fbfd;
+  }
+
+  .price-table td:last-child {
+      color: #475569;
+      font-size: 0.9rem;
+  }
+
+  .maps-cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff9f1c, #ffb84d);
+      color: #fff;
+      font-weight: 700;
+      box-shadow: 0 10px 24px rgba(255, 159, 28, 0.25);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .maps-cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(255, 159, 28, 0.3);
+  }
+
   .service-card {
       background: white;
       padding: 40px;
@@ -1177,6 +1308,59 @@
       margin-bottom: 5px;
   }
 
+  .hours-card {
+      background: linear-gradient(135deg, #fffaf2 0%, #ffffff 100%);
+      border: 1px solid #ffe2b3;
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 10px 24px rgba(10, 35, 66, 0.08);
+  }
+
+  .hours-note {
+      color: #0a2342;
+      font-weight: 700;
+      font-size: 0.92rem;
+      margin-bottom: 10px;
+  }
+
+  .hours-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 8px;
+  }
+
+  .hours-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid #edf3ff;
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 10px 12px;
+      color: #2d4059;
+      font-size: 0.95rem;
+  }
+
+  .hours-list li span {
+      font-weight: 600;
+  }
+
+  .hours-list li strong {
+      color: #0a2342;
+      font-weight: 800;
+      white-space: nowrap;
+  }
+
+  .hours-footnote {
+      margin-top: 10px;
+      color: #2f5d8a;
+      font-size: 0.88rem;
+      font-weight: 600;
+  }
+
   .direction-link {
       display: inline-block;
       color: #ff9f1c;
@@ -1569,18 +1753,24 @@
       position: absolute;
       top: 12px;
       right: 12px;
-      background: rgba(0, 0, 0, 0.55);
+      background: rgba(0, 0, 0, 0.72);
       color: white;
-      padding: 8px 10px;
-      border-radius: 8px;
+      padding: 10px 12px;
+      border-radius: 10px;
       display: inline-flex;
       gap: 8px;
       align-items: center;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
       z-index: 12;
       transition: background 0.15s ease, transform 0.08s ease;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+      max-width: calc(100% - 18px);
+  }
+
+  .map-open-btn span {
+      white-space: normal;
+      line-height: 1.2;
   }
 
   .map-open-btn i {

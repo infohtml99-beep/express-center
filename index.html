@@ -211,6 +211,71 @@
             </div>
         </div>
     </section>
+
+    <section id="pricing" class="section-padding container">
+        <div class="section-title">
+            <h2>ตารางเปรียบเทียบราคา / ค่าบริการคร่าว ๆ</h2>
+            <p>เลื่อนน้ำหนักเพื่อดูราคาประเมินของขนส่งแต่ละเจ้าแบบง่าย ๆ ก่อนตัดสินใจส่ง</p>
+        </div>
+
+        <div class="pricing-grid">
+            <article class="pricing-card pricing-summary-card">
+                <h3>ทำไมต้องดูตารางนี้ก่อนส่ง?</h3>
+                <ul class="pricing-benefits-list">
+                    <li>เปรียบเทียบราคาจากขนส่งหลักอย่าง Flash, J&T, KEX และ EMS ได้ทันที</li>
+                    <li>เห็นภาพคร่าว ๆ ว่าสินค้าหนักกี่กิโลกรัมควรเลือกเจ้าไหนให้คุ้มที่สุด</li>
+                    <li>ใช้เป็นตัวช่วยตัดสินใจก่อนนัดส่งหรือวางแผนการจัดส่งจริง</li>
+                </ul>
+                <p class="pricing-note">ราคาที่แสดงเป็นอัตราประเมินคร่าว ๆ สำหรับพื้นที่เชียงใหม่และน้ำหนักคร่าว ๆ อาจเปลี่ยนแปลงตามขนาดกล่อง ระยะทาง และโปรโมชั่นของแต่ละค่าย</p>
+            </article>
+
+            <article class="pricing-card pricing-calculator-card">
+                <div class="pricing-header-row">
+                    <div>
+                        <h3>โปรแกรมคำนวณค่าส่งคร่าว ๆ</h3>
+                        <p>ปรับน้ำหนักเพื่อดูราคาประเมินที่น่าจะเป็นจริง</p>
+                    </div>
+                    <span class="pricing-badge">Estimate</span>
+                </div>
+
+                <label for="weightRange" class="pricing-label">น้ำหนักประมาณ: <strong id="weightValue">2.0 กก.</strong></label>
+                <input type="range" id="weightRange" min="0.5" max="10" step="0.5" value="2">
+
+                <table class="price-table">
+                    <thead>
+                            <tr>
+                                <th>ขนส่ง</th>
+                            <th>ราคาโดยประมาณ</th>
+                            <th>จุดเด่น</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Flash Express</td>
+                            <td id="price-flash">฿43</td>
+                            <td>คุ้มสุดสำหรับของเล็ก–กลาง</td>
+                        </tr>
+                        <tr>
+                            <td>J&T Express</td>
+                            <td id="price-jnt">฿46</td>
+                            <td>ส่งเร็วและมีโปรโมชั่นบ่อย</td>
+                        </tr>
+                        <tr>
+                            <td>KEX Express</td>
+                            <td id="price-kex">฿55</td>
+                            <td>เหมาะสำหรับพัสดุที่ต้องการความรวดเร็ว</td>
+                        </tr>
+                        <tr>
+                            <td>EMS / ไปรษณีย์ไทย</td>
+                            <td id="price-ems">฿58</td>
+                            <td>ครอบคลุมพื้นที่ห่างไกลและต่างจังหวัด</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </div>
+    </section>
+
       <!-- SEO Content Section -->
     <section class="seo-content-section container section-padding"
         style="background: #fff; border-top: 1px solid #eee;">
@@ -883,6 +948,11 @@
                                 <i class="fas fa-location-arrow" aria-hidden="true"></i>
                                 <span data-i18n="direction.link">ขอเส้นทาง</span>
                             </a>
+                            <a class="maps-cta-button" href="https://maps.app.goo.gl/BWD4PpFzVNZP4gYw8" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fab fa-google" aria-hidden="true"></i>
+                                เปิดใน Google Maps
+                            </a>
                         </div>
                     </div>
 
@@ -906,13 +976,18 @@
                         </div>
                     </div>
 
-                    <div class="info-item">
+                    <div class="info-item hours-card">
                         <div class="icon-box">
                             <i class="fas fa-clock" aria-hidden="true"></i>
                         </div>
                         <div class="info-text">
                             <h3>เวลาทำการ</h3>
-                            <p>จันทร์ - เสาร์: 08:00 - 22:00 น.<br> อาทิตย์ : 08:00 - 18:00 น. (ไม่มีวันหยุด)</p>
+                            <p class="hours-note">เปิดบริการทุกวัน • รับส่งพัสดุและให้คำปรึกษาได้ตลอดวัน</p>
+                            <ul class="hours-list">
+                                <li><span>จันทร์ - เสาร์</span><strong>08:00 - 20:00 น.</strong></li>
+                                <li><span>อาทิตย์</span><strong>08:00 - 18:00 น.</strong></li>
+                            </ul>
+                            <p class="hours-footnote">ไม่มีวันหยุด • พร้อมให้บริการลูกค้าทุกวัน</p>
                         </div>
                     </div>
                 </div>
@@ -929,7 +1004,7 @@
                     <a class="map-open-btn" href="https://maps.app.goo.gl/BWD4PpFzVNZP4gYw8" target="_blank"
                         rel="noopener noreferrer">
                         <i class="fas fa-location-arrow" aria-hidden="true"></i>
-                        <span data-i18n="direction.link">ขอเส้นทาง</span>
+                        <span>เปิดใน Google Maps • นำทางมาที่ร้าน</span>
                     </a>
                 </div>
             </div>
@@ -994,6 +1069,35 @@
     <button id="backToTopBtn" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
 
 
+    <script>
+        const weightRange = document.getElementById('weightRange');
+        const weightValue = document.getElementById('weightValue');
+
+        function estimatePrice(weight, base, extraPerKg) {
+            return Math.max(0, base + Math.max(0, weight - 1) * extraPerKg);
+        }
+
+        function formatPrice(value) {
+            return '฿' + Math.round(value);
+        }
+
+        function updatePricing() {
+            if (!weightRange || !weightValue) return;
+
+            const weight = parseFloat(weightRange.value || 1);
+            weightValue.textContent = weight.toFixed(1) + ' กก.';
+
+            document.getElementById('price-flash').textContent = formatPrice(estimatePrice(weight, 25, 18));
+            document.getElementById('price-jnt').textContent = formatPrice(estimatePrice(weight, 30, 16));
+            document.getElementById('price-kex').textContent = formatPrice(estimatePrice(weight, 35, 20));
+            document.getElementById('price-ems').textContent = formatPrice(estimatePrice(weight, 40, 18));
+        }
+
+        if (weightRange) {
+            weightRange.addEventListener('input', updatePricing);
+            updatePricing();
+        }
+    </script>
     <script src="index.js"></script>
 </body>
 
