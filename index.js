@@ -34,9 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // ฟังก์ชันเมื่อกดปุ่มค้นหา
-    if (mainTrackBtn) mainTrackBtn.addEventListener('click', function () {
-        const trackingNumber = trackingInput.value.trim();
+    function trackPackage() {
+        const trackingNumber = trackingInput ? trackingInput.value.trim() : '';
 
         if (!trackingNumber || !selectedCourierUrl) {
             alert("กรุณากรอกเลขพัสดุและเลือกผู้ให้บริการขนส่ง");
@@ -47,10 +46,22 @@ document.addEventListener('DOMContentLoaded', function () {
         // encodeURIComponent ใช้เพื่อป้องกันอักขระพิเศษในเลขพัสดุทำให้ URL พัง
         const finalUrl = selectedCourierUrl + encodeURIComponent(trackingNumber);
 
-        // เปิดหน้าต่างใหม่ไปยัง URL นั้น
-        window.open(finalUrl, '_blank');
-        // หรือถ้าอยากให้เปิดในหน้าเดิมให้ใช้: window.location.href = finalUrl;
-    });
+        // เปิดหน้าต่างใหม่ไปยัง URL นั้นทันที
+        window.open(finalUrl, '_blank', 'noopener,noreferrer');
+    }
+
+    // ฟังก์ชันเมื่อกดปุ่มค้นหา
+    if (mainTrackBtn) mainTrackBtn.addEventListener('click', trackPackage);
+
+    // รองรับการกด Enter จากช่องกรอกเลขพัสดุ
+    if (trackingInput) {
+        trackingInput.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                trackPackage();
+            }
+        });
+    }
 
     // Initialize language from localStorage or default to Thai
     const initialLang = localStorage.getItem('lang') || 'th';
@@ -458,3 +469,4 @@ if (backToTopBtn) {
         });
     });
 }
+
