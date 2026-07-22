@@ -112,6 +112,7 @@
 
   }
 
+
   .prev {
       position: absolute;
       top: 70%;
@@ -1636,6 +1637,12 @@
       display: block;
       object-fit: cover;
       -o-object-fit: cover;
+  }
+
+  .slide-0 img {
+      object-fit: contain;
+      object-position: center;
+      background-color: #fff;
   }
 
   .slide-1 {
