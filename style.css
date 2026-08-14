@@ -1602,7 +1602,7 @@
       position: relative;
       width: 100%;
       max-width: 1200px;
-      height: clamp(300px, 60vh, 700px);
+      height: clamp(500px, 1100vh, 800px);
       overflow: hidden;
       margin: 20px auto;
       align-items: center;
@@ -1663,11 +1663,18 @@
       display: block;
   }
 
+  .slide-7 {
+      background-color: #fff;
+  }
+
   .slide slide-5{
     width: 100%;
     height: 100%;
     align-items: center;
     object-fit: cover;
+  }
+  .slide-1{
+    
   }
 
   /* Responsive Slider */
